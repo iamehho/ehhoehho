@@ -2,60 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EhhoEhho Coin</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <main class="page">
+    <!-- Header (テキストは必要なら消してOK) -->
+    <header class="header">
+      <h1 class="title">EhhoEhho Coin</h1>
+      <p class="subtitle">Carry the day’s meme — ehho ehho.</p>
+    </header>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="images/hero-coin.png" class="hero-coin" alt="EhhoEhho Coin">
-  
-  <div class="ca-box">
-    <span id="ca-text">ABCD...1234</span>
-    <button onclick="copyCA()">COPY</button>
-  </div>
-</section>
+    <!-- Hero coin -->
+    <section class="hero">
+      <img class="heroCoin" src="images/hero-coin.png" alt="EhhoEhho Coin" />
+    </section>
 
-<!-- CTA -->
-<section class="cta">
-  <a class="cta-btn" href="https://pump.fun" target="_blank">
-    <img src="images/icon-buy.png"> BUY
-  </a>
-  <a class="cta-btn" href="https://dexscreener.com" target="_blank">
-    <img src="images/icon-chart.png"> CHART
-  </a>
-  <button class="cta-btn" onclick="toggleCommunity()">
-    <img src="images/community-card-bg.png"> COMMUNITY
-  </button>
-</section>
+    <!-- CA + Copy -->
+    <section class="ca">
+      <div class="caRow">
+        <span class="caLabel">CA:</span>
+        <span id="caText" class="caText">ABCD...1234</span>
+        <button class="copyBtn" type="button" onclick="copyCA()">COPY</button>
+      </div>
+      <p class="caNote">⚠️ Beware of fake tokens. Use only the official CA.</p>
+    </section>
 
-<!-- COMMUNITY -->
-<section id="community" class="community hidden">
-  <a href="https://x.com" target="_blank" class="community-card">
-    <img src="images/icon-x.png"> X Official
-  </a>
-  <a href="https://x.com/i/communities" target="_blank" class="community-card">
-    <img src="images/icon-x-community.png"> X Community
-  </a>
-  <a href="https://t.me" target="_blank" class="community-card">
-    <img src="images/icon-telegram.png"> Telegram
-  </a>
-</section>
+    <!-- CTA buttons -->
+    <section class="cta">
+      <a class="ctaBtn" href="https://pump.fun" target="_blank" rel="noopener">
+        <img src="images/icon-buy.png" alt="Buy on Pump.fun" />
+      </a>
 
-<!-- HOW TO BUY -->
-<section class="howto">
-  <h2>How to Buy</h2>
-  <div class="steps">
-    <div class="step"><img src="images/step-wallet.png"><p>① Wallet</p></div>
-    <div class="step"><img src="images/step-sol.png"><p>② Get SOL</p></div>
-    <div class="step"><img src="images/step-swap.png"><p>③ Swap</p></div>
-    <div class="step"><img src="images/step-check-ca.png"><p>④ Check CA</p></div>
-  </div>
-</section>
+      <a class="ctaBtn" href="https://dexscreener.com" target="_blank" rel="noopener">
+        <img src="images/icon-chart.png" alt="Chart on DexScreener" />
+      </a>
 
-<script src="script.js"></script>
+      <button class="ctaBtn" type="button" onclick="toggleCommunity()" aria-expanded="false" id="communityToggle">
+        <img src="images/community-card-bg.png" alt="Community" />
+      </button>
+    </section>
+
+    <!-- Community 펼開 -->
+    <section class="communityWrap hidden" id="communityWrap">
+      <a class="communityCard" href="https://x.com" target="_blank" rel="noopener">
+        <img class="communityIcon" src="images/icon-x.png" alt="X Official" />
+        <div class="communityText">
+          <div class="communityTitle">X (Official)</div>
+          <div class="communityDesc">News & updates</div>
+        </div>
+        <span class="communityArrow">↗</span>
+      </a>
+
+      <a class="communityCard" href="https://x.com/i/communities" target="_blank" rel="noopener">
+        <img class="communityIcon" src="images/icon-x-community.png" alt="X Community" />
+        <div class="communityText">
+          <div class="communityTitle">X Community</div>
+          <div class="communityDesc">Talk & memes</div>
+        </div>
+        <span class="communityArrow">↗</span>
+      </a>
+
+      <a class="communityCard" href="https://t.me" target="_blank" rel="noopener">
+        <img class="communityIcon" src="images/icon-telegram.png" alt="Telegram" />
+        <div class="communityText">
+          <div class="communityTitle">Telegram</div>
+          <div class="communityDesc">Chat & alerts</div>
+        </div>
+        <span class="communityArrow">↗</span>
+      </a>
+    </section>
+
+    <!-- How to Buy -->
+    <section class="howto">
+      <h2 class="sectionTitle">How to Buy</h2>
+      <div class="steps">
+        <div class="step">
+          <img src="images/step-wallet.png" alt="Create wallet" />
+          <p>① Wallet</p>
+        </div>
+        <div class="step">
+          <img src="images/step-sol.png" alt="Get SOL" />
+          <p>② Get SOL</p>
+        </div>
+        <div class="step">
+          <img src="images/step-swap.png" alt="Swap on Pump.fun" />
+          <p>③ Swap</p>
+        </div>
+        <div class="step">
+          <img src="images/step-check-ca.png" alt="Check CA" />
+          <p>④ Check CA</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>© EhhoEhho Coin</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
