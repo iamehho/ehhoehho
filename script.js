@@ -1,10 +1,13 @@
 function copyCA() {
   const ca = document.getElementById("caText").innerText;
+
   navigator.clipboard.writeText(ca).then(() => {
     const btn = document.querySelector(".copyBtn");
     const old = btn.innerText;
     btn.innerText = "COPIED";
     setTimeout(() => (btn.innerText = old), 900);
+  }).catch(() => {
+    alert("Copy failed. Please copy manually.");
   });
 }
 
