@@ -1,79 +1,217 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: url("images/bg-dark-stars.png") center / cover no-repeat;
-  color: #fff;
+:root{
+  --gold: #e6c27a;
+  --gold2:#caa24d;
+  --bg: #06070b;
+  --panel: rgba(0,0,0,.55);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  color:#fff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg) url("images/bg-dark-stars.png") center/cover fixed no-repeat;
+}
+
+.page{
+  max-width: 420px;           /* ←ここが2枚目っぽさの要。スマホ幅に固定 */
+  margin: 0 auto;
+  padding: 22px 14px 40px;
   text-align: center;
 }
 
-.hero {
-  padding: 40px 20px;
+.header{ margin-bottom: 10px; }
+.title{
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: .5px;
+}
+.subtitle{
+  margin: 6px 0 0;
+  opacity:.85;
+  font-size: 13px;
 }
 
-.hero-coin {
-  max-width: 300px;
-  width: 80%;
+.hero{ margin-top: 10px; }
+.heroCoin{
+  width: min(320px, 86vw);
+  height:auto;
+  display:block;
+  margin: 0 auto;
 }
 
-.ca-box {
-  margin-top: 15px;
+.ca{
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: var(--panel);
+  border: 1px solid rgba(230,194,122,.35);
+  border-radius: 12px;
 }
 
-.ca-box button {
-  margin-left: 10px;
-  padding: 6px 12px;
-  cursor: pointer;
+.caRow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
 }
 
-.cta {
-  display: flex;
-  justify-content: center;
+.caLabel{
+  color: var(--gold);
+  font-weight:700;
+}
+
+.caText{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: rgba(0,0,0,.5);
+  border: 1px solid rgba(230,194,122,.25);
+}
+
+.copyBtn{
+  border: 1px solid rgba(230,194,122,.55);
+  background: rgba(0,0,0,.55);
+  color: var(--gold);
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor:pointer;
+  font-weight:700;
+  letter-spacing:.3px;
+}
+.copyBtn:hover{ filter: brightness(1.08); }
+
+.caNote{
+  margin: 8px 0 0;
+  font-size: 12px;
+  opacity:.8;
+}
+
+.cta{
+  margin-top: 14px;
+  display:grid;
+  grid-template-columns: 1fr 1fr; /* BUY/CHARTが上段2つ */
   gap: 10px;
-  flex-wrap: wrap;
 }
 
-.cta-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 16px;
-  border: 1px solid gold;
-  background: rgba(0,0,0,0.6);
-  color: gold;
-  text-decoration: none;
-  cursor: pointer;
+.ctaBtn{
+  padding:0;
+  border:none;
+  background: transparent;
+  cursor:pointer;
+  display:block;
 }
 
-.community {
-  margin: 20px;
+.ctaBtn img{
+  width: 100%;
+  height: auto;
+  display:block;
+  border-radius: 14px;
 }
 
-.community-card {
-  display: block;
-  margin: 10px auto;
-  padding: 12px;
-  max-width: 260px;
-  border: 1px solid gold;
-  color: gold;
-  text-decoration: none;
+.ctaBtn:nth-child(3){
+  grid-column: 1 / span 2; /* COMMUNITYは下段で横長1枚 */
 }
 
-.hidden {
-  display: none;
+.communityWrap{
+  margin-top: 12px;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
 }
 
-.howto {
-  margin-top: 40px;
+.hidden{ display:none; }
+
+.communityCard{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  text-decoration:none;
+  color:#fff;
+  background: rgba(0,0,0,.58);
+  border: 1px solid rgba(230,194,122,.35);
 }
 
-.steps {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+.communityCard:hover{
+  border-color: rgba(230,194,122,.7);
+  filter: brightness(1.05);
 }
 
-.step img {
-  width: 70px;
+.communityIcon{
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
+.communityText{
+  text-align:left;
+  flex: 1 1 auto;
+}
+.communityTitle{
+  font-weight: 800;
+  color: var(--gold);
+  font-size: 14px;
+}
+.communityDesc{
+  font-size: 12px;
+  opacity:.85;
+  margin-top: 2px;
+}
+
+.communityArrow{
+  opacity:.85;
+  font-weight: 800;
+}
+
+.howto{
+  margin-top: 22px;
+  padding-top: 6px;
+}
+
+.sectionTitle{
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: var(--gold);
+  letter-spacing:.4px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.step{
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(230,194,122,.25);
+  border-radius: 14px;
+  padding: 10px 8px 8px;
+}
+
+.step img{
+  width: 100%;
+  height: auto;
+  display:block;
+  border-radius: 10px;
+}
+
+.step p{
+  margin: 6px 0 0;
+  font-size: 12px;
+  opacity:.9;
+}
+
+.footer{
+  margin-top: 22px;
+  opacity:.7;
+}
+
+/* スマホ極小対策 */
+@media (max-width: 380px){
+  .steps{ grid-template-columns: 1fr 1fr; }
+}
