@@ -1,9 +1,7 @@
-// ====== Helpers ======
 function copyToClipboard(text){
   if (navigator.clipboard && window.isSecureContext) {
     return navigator.clipboard.writeText(text);
   }
-  // fallback
   return new Promise((resolve, reject) => {
     try{
       const ta = document.createElement("textarea");
@@ -34,10 +32,9 @@ function flashHint(hintEl){
   }, 900);
 }
 
-// ====== CA Copy ======
-const CA = "ABCD...1234"; // ★ここを本物のCAに置き換え
+// ★本物のCAに差し替え
+const CA = "ABCD...1234";
 
-// 表示も同期（2箇所）
 const caText = document.getElementById("caText");
 const caText2 = document.getElementById("caText2");
 if (caText) caText.textContent = CA;
@@ -56,11 +53,10 @@ async function handleCopy(hintEl){
     alert("コピーに失敗しました。手動でコピーしてください。");
   }
 }
-
 copyBtn?.addEventListener("click", () => handleCopy(copyHint));
 copyBtn2?.addEventListener("click", () => handleCopy(copyHint2));
 
-// ====== Community Toggle ======
+// Community Toggle
 const toggle = document.getElementById("communityToggle");
 const panel = document.getElementById("communityPanel");
 
@@ -69,11 +65,9 @@ toggle?.addEventListener("click", () => {
   toggle.setAttribute("aria-expanded", String(!isOpen));
   panel.hidden = isOpen;
 
-  // 矢印の向き
   const chev = toggle.querySelector(".chev");
   if (chev) chev.textContent = isOpen ? "▾" : "▴";
 });
 
-// 初期：閉じる（保険）
 if (panel) panel.hidden = true;
 if (toggle) toggle.setAttribute("aria-expanded", "false");
