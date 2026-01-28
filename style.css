@@ -7,6 +7,7 @@
 
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
+
 body{
   margin:0;
   color:#fff;
@@ -15,25 +16,51 @@ body{
 }
 
 .page{
-  max-width: 420px;           /* ←ここが2枚目っぽさの要。スマホ幅に固定 */
+  max-width: 420px;
   margin: 0 auto;
   padding: 22px 14px 40px;
   text-align: center;
 }
 
+/* Header */
 .header{ margin-bottom: 10px; }
+
 .title{
   margin: 0;
-  font-size: 30px;
-  letter-spacing: .5px;
+  font-size: 34px;
+  letter-spacing: 1px;
+  font-weight: 900;
+
+  /* gold gradient text */
+  background: linear-gradient(180deg, #fff2c6 0%, #f4d58c 30%, #caa24d 60%, #fff2c6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* luxurious depth */
+  text-shadow:
+    0 2px 0 rgba(0,0,0,.55),
+    0 10px 25px rgba(0,0,0,.55),
+    0 0 18px rgba(230,194,122,.25);
 }
+
+.goldLine{
+  width: 72%;
+  height: 2px;
+  margin: 10px auto 0;
+  background: linear-gradient(90deg, transparent, rgba(230,194,122,.9), transparent);
+  border-radius: 999px;
+}
+
 .subtitle{
-  margin: 6px 0 0;
+  margin: 10px 0 0;
   opacity:.85;
   font-size: 13px;
 }
 
+/* Hero */
 .hero{ margin-top: 10px; }
+
 .heroCoin{
   width: min(320px, 86vw);
   height:auto;
@@ -41,12 +68,13 @@ body{
   margin: 0 auto;
 }
 
+/* CA */
 .ca{
   margin-top: 10px;
   padding: 10px 12px;
   background: var(--panel);
   border: 1px solid rgba(230,194,122,.35);
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .caRow{
@@ -59,14 +87,14 @@ body{
 
 .caLabel{
   color: var(--gold);
-  font-weight:700;
+  font-weight:800;
 }
 
 .caText{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 13px;
-  padding: 4px 8px;
-  border-radius: 8px;
+  padding: 5px 10px;
+  border-radius: 10px;
   background: rgba(0,0,0,.5);
   border: 1px solid rgba(230,194,122,.25);
 }
@@ -75,24 +103,25 @@ body{
   border: 1px solid rgba(230,194,122,.55);
   background: rgba(0,0,0,.55);
   color: var(--gold);
-  padding: 6px 10px;
-  border-radius: 10px;
+  padding: 7px 12px;
+  border-radius: 12px;
   cursor:pointer;
-  font-weight:700;
-  letter-spacing:.3px;
+  font-weight:900;
+  letter-spacing:.4px;
 }
 .copyBtn:hover{ filter: brightness(1.08); }
 
 .caNote{
   margin: 8px 0 0;
   font-size: 12px;
-  opacity:.8;
+  opacity:.85;
 }
 
+/* CTA (BUY/CHART + Community same size) */
 .cta{
   margin-top: 14px;
   display:grid;
-  grid-template-columns: 1fr 1fr; /* BUY/CHARTが上段2つ */
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
@@ -111,17 +140,20 @@ body{
   border-radius: 14px;
 }
 
-.ctaBtn:nth-child(3){
-  grid-column: 1 / span 2; /* COMMUNITYは下段で横長1枚 */
+/* Community button stays same width as BUY/CHART but centered */
+.ctaCommunity{
+  grid-column: 1 / span 2;
+  justify-self: center;
+  width: calc((100% - 10px) / 2);
 }
 
+/* Community expand cards */
 .communityWrap{
   margin-top: 12px;
   display:flex;
   flex-direction:column;
   gap: 10px;
 }
-
 .hidden{ display:none; }
 
 .communityCard{
@@ -152,22 +184,25 @@ body{
   text-align:left;
   flex: 1 1 auto;
 }
+
 .communityTitle{
-  font-weight: 800;
+  font-weight: 900;
   color: var(--gold);
   font-size: 14px;
 }
+
 .communityDesc{
   font-size: 12px;
-  opacity:.85;
+  opacity:.9;
   margin-top: 2px;
 }
 
 .communityArrow{
   opacity:.85;
-  font-weight: 800;
+  font-weight: 900;
 }
 
+/* How to Buy (2x2, bigger images, no text) */
 .howto{
   margin-top: 22px;
   padding-top: 6px;
@@ -182,36 +217,26 @@ body{
 
 .steps{
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: 1fr 1fr; /* 2x2 fixed */
+  gap: 12px;
 }
 
 .step{
   background: rgba(0,0,0,.45);
   border: 1px solid rgba(230,194,122,.25);
-  border-radius: 14px;
-  padding: 10px 8px 8px;
+  border-radius: 16px;
+  padding: 10px;
 }
 
 .step img{
   width: 100%;
   height: auto;
   display:block;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
-.step p{
-  margin: 6px 0 0;
-  font-size: 12px;
-  opacity:.9;
-}
-
+/* Footer */
 .footer{
   margin-top: 22px;
   opacity:.7;
-}
-
-/* スマホ極小対策 */
-@media (max-width: 380px){
-  .steps{ grid-template-columns: 1fr 1fr; }
 }
