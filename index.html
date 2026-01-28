@@ -9,9 +9,11 @@
 
 <body>
   <main class="page">
-    <!-- Header (テキストは必要なら消してOK) -->
+
+    <!-- Header -->
     <header class="header">
       <h1 class="title">EhhoEhho Coin</h1>
+      <div class="goldLine"></div>
       <p class="subtitle">Carry the day’s meme — ehho ehho.</p>
     </header>
 
@@ -30,7 +32,7 @@
       <p class="caNote">⚠️ Beware of fake tokens. Use only the official CA.</p>
     </section>
 
-    <!-- CTA buttons -->
+    <!-- CTA buttons (BUY/CHART same size, Community same size too) -->
     <section class="cta">
       <a class="ctaBtn" href="https://pump.fun" target="_blank" rel="noopener">
         <img src="images/icon-buy.png" alt="Buy on Pump.fun" />
@@ -40,18 +42,19 @@
         <img src="images/icon-chart.png" alt="Chart on DexScreener" />
       </a>
 
-      <button class="ctaBtn" type="button" onclick="toggleCommunity()" aria-expanded="false" id="communityToggle">
+      <button class="ctaBtn ctaCommunity" type="button" onclick="toggleCommunity()" aria-expanded="false" id="communityToggle">
         <img src="images/community-card-bg.png" alt="Community" />
       </button>
     </section>
 
-    <!-- Community 펼開 -->
+    <!-- Community expand -->
     <section class="communityWrap hidden" id="communityWrap">
+
       <a class="communityCard" href="https://x.com" target="_blank" rel="noopener">
         <img class="communityIcon" src="images/icon-x.png" alt="X Official" />
         <div class="communityText">
           <div class="communityTitle">X (Official)</div>
-          <div class="communityDesc">News & updates</div>
+          <div class="communityDesc">最新情報・お知らせ / News & updates</div>
         </div>
         <span class="communityArrow">↗</span>
       </a>
@@ -60,7 +63,7 @@
         <img class="communityIcon" src="images/icon-x-community.png" alt="X Community" />
         <div class="communityText">
           <div class="communityTitle">X Community</div>
-          <div class="communityDesc">Talk & memes</div>
+          <div class="communityDesc">雑談・ネタ投稿 / Talk & memes</div>
         </div>
         <span class="communityArrow">↗</span>
       </a>
@@ -69,31 +72,32 @@
         <img class="communityIcon" src="images/icon-telegram.png" alt="Telegram" />
         <div class="communityText">
           <div class="communityTitle">Telegram</div>
-          <div class="communityDesc">Chat & alerts</div>
+          <div class="communityDesc">濃い交流・速報 / Chat & alerts</div>
         </div>
         <span class="communityArrow">↗</span>
       </a>
+
     </section>
 
-    <!-- How to Buy -->
+    <!-- How to Buy (no text, bigger images, 2x2) -->
     <section class="howto">
       <h2 class="sectionTitle">How to Buy</h2>
+
       <div class="steps">
         <div class="step">
           <img src="images/step-wallet.png" alt="Create wallet" />
-          <p>① Wallet</p>
         </div>
+
         <div class="step">
           <img src="images/step-sol.png" alt="Get SOL" />
-          <p>② Get SOL</p>
         </div>
+
         <div class="step">
           <img src="images/step-swap.png" alt="Swap on Pump.fun" />
-          <p>③ Swap</p>
         </div>
+
         <div class="step">
           <img src="images/step-check-ca.png" alt="Check CA" />
-          <p>④ Check CA</p>
         </div>
       </div>
     </section>
@@ -101,6 +105,7 @@
     <footer class="footer">
       <small>© EhhoEhho Coin</small>
     </footer>
+
   </main>
 
   <script src="script.js"></script>
