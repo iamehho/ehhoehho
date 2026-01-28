@@ -1,8 +1,10 @@
 :root{
   --gold: #e6c27a;
-  --gold2:#caa24d;
+  --gold2: #caa24d;
   --bg: #06070b;
   --panel: rgba(0,0,0,.55);
+  --line: rgba(230,194,122,.45);
+  --line2: rgba(230,194,122,.25);
 }
 
 *{ box-sizing:border-box; }
@@ -18,44 +20,32 @@ body{
 .page{
   max-width: 420px;
   margin: 0 auto;
-  padding: 22px 14px 40px;
+  padding: 20px 14px 44px;
   text-align: center;
 }
 
 /* Header */
-.header{ margin-bottom: 10px; }
+.header{ margin-bottom: 8px; }
 
 .title{
   margin: 0;
   font-size: 34px;
-  letter-spacing: 1px;
   font-weight: 900;
-
-  /* gold gradient text */
+  letter-spacing: 1px;
   background: linear-gradient(180deg, #fff2c6 0%, #f4d58c 30%, #caa24d 60%, #fff2c6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-
-  /* luxurious depth */
   text-shadow:
     0 2px 0 rgba(0,0,0,.55),
     0 10px 25px rgba(0,0,0,.55),
-    0 0 18px rgba(230,194,122,.25);
-}
-
-.goldLine{
-  width: 72%;
-  height: 2px;
-  margin: 10px auto 0;
-  background: linear-gradient(90deg, transparent, rgba(230,194,122,.9), transparent);
-  border-radius: 999px;
+    0 0 18px rgba(230,194,122,.22);
 }
 
 .subtitle{
-  margin: 10px 0 0;
-  opacity:.85;
+  margin: 8px 0 0;
   font-size: 13px;
+  opacity:.85;
 }
 
 /* Hero */
@@ -68,68 +58,69 @@ body{
   margin: 0 auto;
 }
 
-/* CA */
-.ca{
-  margin-top: 10px;
-  padding: 10px 12px;
-  background: var(--panel);
-  border: 1px solid rgba(230,194,122,.35);
-  border-radius: 14px;
+/* CA: 上下ラインで囲う（箱は作らない） */
+.caLine{
+  margin-top: 12px;
+  padding: 10px 0 8px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
-.caRow{
+.caLineInner{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
-  flex-wrap:wrap;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .caLabel{
   color: var(--gold);
-  font-weight:800;
+  font-weight: 900;
+  letter-spacing: .4px;
 }
 
 .caText{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 13px;
-  padding: 5px 10px;
-  border-radius: 10px;
-  background: rgba(0,0,0,.5);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.45);
   border: 1px solid rgba(230,194,122,.25);
 }
 
 .copyBtn{
-  border: 1px solid rgba(230,194,122,.55);
-  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(230,194,122,.65);
+  background: rgba(0,0,0,.45);
   color: var(--gold);
-  padding: 7px 12px;
-  border-radius: 12px;
+  padding: 7px 14px;
+  border-radius: 999px;
   cursor:pointer;
-  font-weight:900;
-  letter-spacing:.4px;
+  font-weight: 900;
+  letter-spacing: .5px;
 }
 .copyBtn:hover{ filter: brightness(1.08); }
 
 .caNote{
   margin: 8px 0 0;
   font-size: 12px;
-  opacity:.85;
+  opacity:.82;
 }
 
-/* CTA (BUY/CHART + Community same size) */
-.cta{
+/* CTA: 横一列 */
+.ctaRow{
   margin-top: 14px;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
+  align-items: stretch;
 }
 
 .ctaBtn{
-  padding:0;
-  border:none;
+  padding: 0;
+  border: none;
   background: transparent;
-  cursor:pointer;
+  cursor: pointer;
   display:block;
 }
 
@@ -140,12 +131,36 @@ body{
   border-radius: 14px;
 }
 
-/* Community button stays same width as BUY/CHART but centered */
-.ctaCommunity{
-  grid-column: 1 / span 2;
-  justify-self: center;
-  width: calc((100% - 10px) / 2);
+/* About box */
+.aboutBox{
+  margin-top: 16px;
+  padding: 14px 14px 12px;
+  background: rgba(0,0,0,.50);
+  border: 1px solid var(--line2);
+  border-radius: 16px;
+  text-align: left;
+  position: relative;
 }
+
+.boxTitle{
+  text-align:center;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: .4px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(230,194,122,.35);
+}
+
+.aboutList{
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.6;
+  font-size: 13px;
+  opacity: .92;
+}
+
+.aboutList li{ margin: 7px 0; }
 
 /* Community expand cards */
 .communityWrap{
@@ -164,8 +179,8 @@ body{
   border-radius: 14px;
   text-decoration:none;
   color:#fff;
-  background: rgba(0,0,0,.58);
-  border: 1px solid rgba(230,194,122,.35);
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(230,194,122,.30);
 }
 
 .communityCard:hover{
@@ -202,28 +217,39 @@ body{
   font-weight: 900;
 }
 
-/* How to Buy (2x2, bigger images, no text) */
-.howto{
-  margin-top: 22px;
-  padding-top: 6px;
+/* How to Buy: 外枠＋見出しをラインで演出 */
+.howtoBox{
+  margin-top: 16px;
+  padding: 14px 12px 12px;
+  background: rgba(0,0,0,.50);
+  border: 1px solid var(--line2);
+  border-radius: 16px;
 }
 
-.sectionTitle{
-  margin: 0 0 10px;
-  font-size: 18px;
+.howtoHeader{
+  text-align: center;
+  margin: 2px 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(230,194,122,.35);
+}
+
+.howtoHeaderText{
+  font-weight: 900;
   color: var(--gold);
-  letter-spacing:.4px;
+  letter-spacing: .4px;
+  font-size: 18px;
 }
 
+/* 2×2で大きめ表示 */
 .steps{
   display:grid;
-  grid-template-columns: 1fr 1fr; /* 2x2 fixed */
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
 .step{
   background: rgba(0,0,0,.45);
-  border: 1px solid rgba(230,194,122,.25);
+  border: 1px solid rgba(230,194,122,.22);
   border-radius: 16px;
   padding: 10px;
 }
@@ -237,6 +263,16 @@ body{
 
 /* Footer */
 .footer{
-  margin-top: 22px;
+  margin-top: 18px;
   opacity:.7;
+}
+
+/* 画面が狭い場合はCTAを2列に（iPhone SE等対策） */
+@media (max-width: 360px){
+  .ctaRow{
+    grid-template-columns: 1fr 1fr;
+  }
+  .ctaRow .ctaBtn:nth-child(3){
+    grid-column: 1 / span 2;
+  }
 }
