@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#07070a" />
   <title>EhhoEhho Coin | Official</title>
   <meta name="description" content="ｴｯﾎｴｯﾎで毎日の話題を運ぶ。時事ネタ・ネットの話題・トレンドをえっほえっほで届けます。" />
-
   <link rel="preload" href="./images/bg-dark-stars.png" as="image" />
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -17,119 +16,117 @@
   <main class="wrap">
     <!-- HEADER -->
     <header class="top">
-      <div class="brand">
-        <h1 class="title">EhhoEhho Coin</h1>
-        <p class="subtitle">ｴｯﾎｴｯﾎで毎日の話題を運ぶ</p>
-        <p class="tagline">毎日の時事ネタ・ネットの話題・トレンドをえっほえっほで届けます</p>
-      </div>
+      <h1 class="title">EhhoEhho Coin</h1>
+      <p class="subtitle">ｴｯﾎｴｯﾎで毎日の話題を運ぶ</p>
+      <p class="tagline">毎日の時事ネタ・ネットの話題・トレンドをえっほえっほで届けます</p>
     </header>
 
-    <!-- HERO -->
-    <section class="hero card">
-      <div class="hero-inner">
-        <div class="coin-frame" aria-label="EhhoEhho coin emblem">
-          <img class="coin" src="./images/hero-coin.png" alt="EhhoEhho Coin" />
-          <div class="ring"></div>
-          <div class="ring ring2"></div>
-          <div class="glow"></div>
+    <!-- HERO（大枠カードは作らない） -->
+    <section class="hero">
+      <div class="coin-frame" aria-label="EhhoEhho coin emblem">
+        <img class="coin" src="./images/hero-coin.png" alt="EhhoEhho Coin" />
+        <div class="ring"></div>
+        <div class="ring ring2"></div>
+        <div class="glow"></div>
+      </div>
+
+      <!-- CA（-CA- + 番号のみ枠） -->
+      <div class="ca-area">
+        <div class="label-line">
+          <span class="line"></span>
+          <span class="label-text">CA</span>
+          <span class="line"></span>
         </div>
 
-        <!-- CA -->
-        <div class="ca-block">
-          <div class="ca-label">CA</div>
-
-          <!-- ★上下ラインで“おしゃれ”に見せる -->
-          <div class="ca-line">
-            <span class="line"></span>
-            <span class="ca-text" id="caText">ABCD...1234</span>
-            <span class="line"></span>
-          </div>
-
-          <button class="btn btn-copy" id="copyBtn" type="button" aria-live="polite">
-            <span class="btn-copy__text">COPY</span>
-            <span class="btn-copy__hint" id="copyHint" hidden>Copied!</span>
-          </button>
-
-          <p class="ca-warn">※ 偽CA注意：公式サイトのものを使用してください</p>
-        </div>
-
-        <!-- CTA buttons -->
-        <div class="cta-grid">
-          <a class="cta" href="#" target="_blank" rel="noopener">
-            <img src="./images/icon-buy.png" alt="" class="cta-ic" />
-            <div class="cta-txt">
-              <div class="cta-title">BUY</div>
-              <div class="cta-sub">Pump.fun</div>
-            </div>
-            <span class="ext" aria-hidden="true">↗</span>
-          </a>
-
-          <a class="cta" href="#" target="_blank" rel="noopener">
-            <img src="./images/icon-chart.png" alt="" class="cta-ic" />
-            <div class="cta-txt">
-              <div class="cta-title">CHART</div>
-              <div class="cta-sub">Dexscreener</div>
-            </div>
-            <span class="ext" aria-hidden="true">↗</span>
-          </a>
-
-          <!-- COMMUNITYは開閉（JS最小） -->
-          <button class="cta cta-toggle" type="button" id="communityToggle" aria-expanded="false" aria-controls="communityPanel">
-            <span class="badge">
-              <img src="./images/icon-x-community.png" alt="" class="badge-ic" />
-            </span>
-            <div class="cta-txt">
-              <div class="cta-title">COMMUNITY</div>
-              <div class="cta-sub">Join Us</div>
-            </div>
-            <span class="chev" aria-hidden="true">▾</span>
+        <div class="ca-row">
+          <span class="ca-value" id="caText">ABCD...1234</span>
+          <button class="btn-copy" id="copyBtn" type="button">
+            COPY
+            <span class="hint" id="copyHint" hidden>Copied!</span>
           </button>
         </div>
 
-        <!-- COMMUNITY PANEL -->
-        <div class="community-panel" id="communityPanel" hidden>
-          <div class="community-card">
-            <img class="community-bg" src="./images/community-card-bg.png" alt="" />
-            <div class="community-content">
-              <div class="community-head">
-                <h2 class="section-title">Community</h2>
-                <p class="section-sub">参加はこちら（公式リンク）</p>
-              </div>
+        <p class="ca-warn">※ 偽CA注意：公式サイトのものを使用してください</p>
+      </div>
 
-              <div class="community-links">
-                <a class="community-link" href="#" target="_blank" rel="noopener">
-                  <img src="./images/icon-x.png" class="community-ic" alt="" />
-                  <div>
-                    <div class="community-name">X (Official)</div>
-                    <div class="community-desc">最新のｴｯﾎｴｯﾎをお届け</div>
-                  </div>
-                  <span class="ext" aria-hidden="true">↗</span>
-                </a>
+      <!-- CTA（PCでも横1列、スマホは縦） -->
+      <div class="cta-grid">
+        <a class="cta" href="#" target="_blank" rel="noopener">
+          <img src="./images/icon-buy.png" alt="" class="cta-ic" />
+          <div class="cta-txt">
+            <div class="cta-title">BUY</div>
+            <div class="cta-sub">Pump.fun</div>
+          </div>
+          <span class="ext" aria-hidden="true">➚</span>
+        </a>
 
-                <a class="community-link" href="#" target="_blank" rel="noopener">
-                  <img src="./images/icon-telegram.png" class="community-ic" alt="" />
-                  <div>
-                    <div class="community-name">Telegram</div>
-                    <div class="community-desc">雑談・企画・投票など</div>
-                  </div>
-                  <span class="ext" aria-hidden="true">↗</span>
-                </a>
-              </div>
+        <a class="cta" href="#" target="_blank" rel="noopener">
+          <img src="./images/icon-chart.png" alt="" class="cta-ic" />
+          <div class="cta-txt">
+            <div class="cta-title">CHART</div>
+            <div class="cta-sub">Dexscreener</div>
+          </div>
+          <span class="ext" aria-hidden="true">➚</span>
+        </a>
 
-              <div class="community-note">
-                <span class="dot"></span>
-                雰囲気・ミーム・コミュニティ重視で、ゆるく長くやっていきます。
-              </div>
+        <button class="cta cta-toggle" type="button" id="communityToggle" aria-expanded="false" aria-controls="communityPanel">
+          <span class="badge">
+            <img src="./images/icon-x-community.png" alt="" class="badge-ic" />
+          </span>
+          <div class="cta-txt">
+            <div class="cta-title">COMMUNITY</div>
+            <div class="cta-sub">Join Us</div>
+          </div>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+      </div>
+
+      <!-- COMMUNITY PANEL（3つ） -->
+      <div class="community-panel" id="communityPanel" hidden>
+        <div class="community-card">
+          <img class="community-bg" src="./images/community-card-bg.png" alt="" />
+          <div class="community-content">
+            <div class="community-links">
+              <a class="community-link" href="#" target="_blank" rel="noopener">
+                <img src="./images/icon-x.png" class="community-ic" alt="" />
+                <div class="community-mid">
+                  <div class="community-name">X (Official)</div>
+                  <div class="community-desc">最新のｴｯﾎｴｯﾎをお届け</div>
+                </div>
+                <span class="ext" aria-hidden="true">➚</span>
+              </a>
+
+              <a class="community-link" href="#" target="_blank" rel="noopener">
+                <img src="./images/icon-x-community.png" class="community-ic" alt="" />
+                <div class="community-mid">
+                  <div class="community-name">X Community</div>
+                  <div class="community-desc">コミュニティ参加はこちら</div>
+                </div>
+                <span class="ext" aria-hidden="true">➚</span>
+              </a>
+
+              <a class="community-link" href="#" target="_blank" rel="noopener">
+                <img src="./images/icon-telegram.png" class="community-ic" alt="" />
+                <div class="community-mid">
+                  <div class="community-name">Telegram</div>
+                  <div class="community-desc">雑談・企画・投票など</div>
+                </div>
+                <span class="ext" aria-hidden="true">➚</span>
+              </a>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="card section">
-      <h2 class="section-title">EhhoEhho Coin とは？</h2>
+    <!-- ABOUT（タイトル中央＆-TITLE-） -->
+    <section class="section">
+      <div class="title-line">
+        <span class="line"></span>
+        <h2 class="section-title">EhhoEhho Coin とは？</h2>
+        <span class="line"></span>
+      </div>
+
       <ul class="bullets">
         <li>ｴｯﾎｴｯﾎで <b>毎日の話題</b> を運ぶミームコイン</li>
         <li><b>時事ネタ・ネットの話題・トレンド</b> を、軽く・面白く・みんなで共有</li>
@@ -137,35 +134,20 @@
       </ul>
     </section>
 
-    <!-- DAILY -->
-    <section class="card section">
-      <h2 class="section-title">今日のｴｯﾎｴｯﾎ（Daily）</h2>
-      <p class="muted">
-        ※ ここはあとで更新用に差し替えOK（例：固定ポスト / note / ブログ / スプレッドシート埋め込み等）
-      </p>
-      <div class="daily-box">
-        <div class="daily-badge">TODAY</div>
-        <div class="daily-text">
-          今日は「◯◯」をｴｯﾎｴｯﾎ。<br/>
-          みんなのネタ提供も歓迎！
-        </div>
-        <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">最新投稿へ ↗</a>
-      </div>
-    </section>
+    <!-- DAILY（削除） -->
 
-    <!-- HOW TO BUY -->
-    <section class="card section">
-      <div class="section-head">
-        <h2 class="section-title">How to Buy</h2>
-        <p class="section-sub">初心者向け：①〜④で順番が分かるように</p>
+    <!-- HOW TO BUY（囲い無し・画像も囲い無し・①は維持） -->
+    <section class="section">
+      <div class="title-line">
+        <span class="line"></span>
+        <h2 class="section-title">How To Buy</h2>
+        <span class="line"></span>
       </div>
 
       <ol class="steps">
         <li class="step">
           <div class="step-no">①</div>
-          <div class="step-ic-wrap">
-            <img src="./images/step-wallet.png" class="step-ic" alt="" />
-          </div>
+          <img src="./images/step-wallet.png" class="step-ic" alt="" />
           <div class="step-body">
             <div class="step-title">Walletを用意</div>
             <div class="step-desc">Phantom などのウォレットを準備して接続</div>
@@ -174,9 +156,7 @@
 
         <li class="step">
           <div class="step-no">②</div>
-          <div class="step-ic-wrap">
-            <img src="./images/step-sol.png" class="step-ic" alt="" />
-          </div>
+          <img src="./images/step-sol.png" class="step-ic" alt="" />
           <div class="step-body">
             <div class="step-title">SOLを用意</div>
             <div class="step-desc">手数料とスワップ用にSOLを少し入れておく</div>
@@ -185,9 +165,7 @@
 
         <li class="step">
           <div class="step-no">③</div>
-          <div class="step-ic-wrap">
-            <img src="./images/step-swap.png" class="step-ic" alt="" />
-          </div>
+          <img src="./images/step-swap.png" class="step-ic" alt="" />
           <div class="step-body">
             <div class="step-title">Swapする</div>
             <div class="step-desc">Pump.fun / DEX で EhhoEhho Coin にスワップ</div>
@@ -196,9 +174,7 @@
 
         <li class="step">
           <div class="step-no">④</div>
-          <div class="step-ic-wrap">
-            <img src="./images/step-check-ca.png" class="step-ic" alt="" />
-          </div>
+          <img src="./images/step-check-ca.png" class="step-ic" alt="" />
           <div class="step-body">
             <div class="step-title">CAを確認</div>
             <div class="step-desc">必ず公式CAと一致するかチェック（偽トークン注意）</div>
@@ -206,21 +182,24 @@
         </li>
       </ol>
 
-      <div class="ca-again">
-        <div class="ca-mini">CA</div>
-        <div class="ca-mini-line">
+      <!-- 下にもCA（同デザイン） -->
+      <div class="ca-area ca-area--mini">
+        <div class="label-line">
           <span class="line"></span>
-          <span id="caText2">ABCD...1234</span>
+          <span class="label-text">CA</span>
           <span class="line"></span>
         </div>
-        <button class="btn btn-copy small" id="copyBtn2" type="button">
-          COPY
-          <span class="btn-copy__hint" id="copyHint2" hidden>Copied!</span>
-        </button>
+
+        <div class="ca-row">
+          <span class="ca-value" id="caText2">ABCD...1234</span>
+          <button class="btn-copy" id="copyBtn2" type="button">
+            COPY
+            <span class="hint" id="copyHint2" hidden>Copied!</span>
+          </button>
+        </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-line"></div>
       <div class="footer-txt">© EhhoEhho Coin</div>
